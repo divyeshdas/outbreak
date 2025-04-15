@@ -2,7 +2,7 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
-    --background-color: #f8f9fa;
+    --background-color: linear-gradient(135deg, #272121 0%, #171919 100%);;
     --text-color: #2c3e50;
 }
 
