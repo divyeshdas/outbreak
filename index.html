@@ -51,7 +51,7 @@
             color: #e74c3c;
         }
         body {
-            background: linear-gradient(135deg, #272121 0%, #171919 100%);
+            background: linear-gradient(135deg, #2f4f4f 0%, #010101 100%) !important;
             min-height: 100vh;
             color: #ecf0f1;
             padding-top: 0;
@@ -148,6 +148,7 @@
             margin-top: 20px;
             padding: 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
         }
         .feature-card {
             transition: transform 0.3s;
@@ -339,6 +340,54 @@
         .top-nav .btn-donate:hover {
             background: linear-gradient(45deg, #c0392b, #e74c3c);
         }
+        .map-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        .map-card:hover {
+            transform: translateY(-5px);
+        }
+        .content-card {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .content-card h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .content-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .map-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .map-placeholder i {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .map-placeholder h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .map-placeholder p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+        .map-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -381,9 +430,6 @@
                         <a class="nav-link" href="pages/dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/map.html">Map</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="pages/comparison.html">Comparison</a>
                     </li>
                     <li class="nav-item">
@@ -408,7 +454,7 @@
 
     <div class="container">
         <div class="row mt-5">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card feature-card dashboard">
                     <div class="card-body text-center">
                         <i class="fas fa-chart-line feature-icon"></i>
@@ -417,34 +463,84 @@
                         <a href="pages/dashboard.html" class="btn btn-outline-success">View Dashboard</a>
                     </div>
                 </div>
-                        </div>
-            <div class="col-md-3">
-                <div class="card feature-card map">
-                    <div class="card-body text-center">
-                        <i class="fas fa-globe feature-icon"></i>
-                        <h5 class="card-title">Global Map</h5>
-                        <p class="card-text">Explore disease spread patterns on an interactive world map.</p>
-                        <a href="pages/map.html" class="btn btn-outline-danger">View Map</a>
-                    </div>
-                </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card feature-card comparison">
                     <div class="card-body text-center">
                         <i class="fas fa-balance-scale feature-icon"></i>
                         <h5 class="card-title">Comparison Tool</h5>
                         <p class="card-text">Compare disease statistics between different regions and time periods.</p>
                         <a href="pages/comparison.html" class="btn btn-outline-warning">Compare Data</a>
-            </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card feature-card explorer">
                     <div class="card-body text-center">
                         <i class="fas fa-database feature-icon"></i>
                         <h5 class="card-title">Data Explorer</h5>
                         <p class="card-text">Access and analyze detailed disease data with advanced filtering options.</p>
                         <a href="pages/explorer.html" class="btn btn-outline-primary">Explore Data</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-maps-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #ffffff;">Global Disease Distribution</h2>
+            
+            <!-- Smallpox Map Section -->
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-6">
+                    <div class="map-card">
+                        <div class="map-placeholder">
+                            <img src="/images/maps/number-of-reported-smallpox-cases.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h3 style="color: #e74c3c;">Smallpox Distribution (1977)</h3>
+                        <p class="text-light">The reported number of smallpox cases in 1977 shows the final stages of this historic disease before its eradication. Smallpox was a severe and contagious disease caused by the variola virus, known for its high mortality rate and permanent scarring. Through a successful global vaccination campaign, it became the first disease to be eradicated by human effort.</p>
+                        <a href="pages/explorer.html#smallpox" class="btn btn-outline-danger mt-3">Explore Smallpox Data</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIV/AIDS Map Section -->
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <div class="map-card">
+                        <div class="map-placeholder">
+                            <img src="/images/maps/hiv-death-rates.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="content-card">
+                        <h3 style="color: #f39c12;">HIV/AIDS Death Rate (2021)</h3>
+                        <p class="text-light">The death rate from HIV/AIDS per 100,000 people shows the ongoing impact of this pandemic. The map highlights significant regional variations, with Sub-Saharan Africa experiencing the highest burden. This data is age-standardized to allow for accurate comparisons between countries with different age structures.</p>
+                        <a href="pages/explorer.html#hiv" class="btn btn-outline-warning mt-3">Explore HIV/AIDS Data</a>
+            </div>
+                </div>
+            </div>
+
+            <!-- COVID-19 Map Section -->
+            <div class="row mb-5 align-items-center">
+                        <div class="col-md-6">
+                    <div class="map-card">
+                        <div class="map-placeholder">
+                            <img src="/images/estimated-cumulative-excess-deaths-per-100000-people-during-covid-19.png" alt="">
+                        </div>
+                    </div>
+                    </div>
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h3 style="color: #3498db;">COVID-19 Excess Deaths (2024)</h3>
+                        <p class="text-light">The map shows estimated cumulative excess deaths per 100,000 people during the COVID-19 pandemic. This metric provides a comprehensive view of the pandemic's impact, accounting for both direct and indirect effects on mortality. The data includes uncertainty intervals for countries without complete all-cause mortality reporting.</p>
+                        <a href="pages/explorer.html#covid" class="btn btn-outline-primary mt-3">Explore COVID-19 Data</a>
                     </div>
                 </div>
             </div>
